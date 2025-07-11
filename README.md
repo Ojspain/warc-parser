@@ -1,9 +1,9 @@
-#WARC Parser
+# WARC Parser
 
 A Python script to collect internal links and simulate form submissions from a given webpage, saving the collected URLs to a file named after the site.
 Features
 
-#Installation
+# Installation
 
 To install this script and its dependencies, clone the repository and use pip:
 ```
@@ -12,7 +12,8 @@ cd warc-parser
 pip install .
 ```
 This will install the necessary Python packages and make the collect-urls command available in your terminal.
-Usage
+
+# Usage
 
 Run the script from your terminal, providing the base URL you want to scrape:
 ```
