@@ -1,7 +1,6 @@
 # WARC Parser
 
 A Python script to collect internal links and simulate form submissions from a given webpage, saving the collected URLs to a file named after the site.
-Features
 
 # Installation
 
