@@ -9,9 +9,11 @@ To install this script and its dependencies, clone the repository and use pip:
 ```
 git clone https://github.com/Ojspain/warc-parser.git
 cd warc-parser
+python3 -m venv venv
+source venv/bin/activate
 pip install .
 ```
-This will install the necessary Python packages and make the collect-urls command available in your terminal.
+This will install the necessary Python packages and make the collect-urls command available in your terminal in the directory you installed it.
 
 # Usage
 
