@@ -1,9 +1,9 @@
-from setuptools import setup, find_packages
+from setuptools import setup
 
 setup(
     name='warc-parser',
     version='0.1.0',
-    packages=find_packages(),
+    py_modules=['warc_parser'],
     install_requires=[
         'requests>=2.25.1',
         'beautifulsoup4>=4.9.3',
