@@ -89,7 +89,8 @@ def process_forms(soup, initial_page_url, base_domain, collected_urls, rate_limi
                         time.sleep(rate_limit_sleep)
 
 # Writes all unique collected URLs to a specified file.
-def write_urls_to_file(collected_urls, output_filename='urls.txt'):
+def write_urls_to_file(collected_urls, sitename):
+    output_filename = f"{sitename}-urls.txt"
     with open(output_filename, 'w') as f:
         for url_to_write in sorted(list(collected_urls)):
             f.write(url_to_write + '\n')
@@ -102,6 +103,9 @@ def main():
     parsed_base_url = urlparse(base_url)
     base_domain = parsed_base_url.netloc
 
+    # Derive sitename from base_domain
+    sanitized_sitename = base_domain.replace('.', '-')
+
     collected_urls = set()
     collected_urls.add(base_url)
 
@@ -109,7 +113,7 @@ def main():
 
     collect_links(soup, base_url, base_domain, collected_urls, rate_limit_sleep)
     process_forms(soup, base_url, base_domain, collected_urls, rate_limit_sleep)
-    write_urls_to_file(collected_urls)
+    write_urls_to_file(collected_urls, sanitized_sitename) # Pass the new sitename
 
 if __name__ == "__main__":
     main()
